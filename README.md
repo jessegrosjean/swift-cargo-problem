@@ -28,3 +28,20 @@ Multiple commands produce '/Users/jessegrosjean/Library/Developer/Xcode/DerivedD
 ```
 
 Any idea how to fix?
+
+# A fix!
+
+Matt Massicotte helped me find fix. I'm not sure that all steps are neccessary, but these sets seem to work.
+
+The basic problem is that XCFrameworks need unique names/paths in many underdocumented cases if you plan to use more then one in a single app. To fix the probem in both of the above generated packages I did:
+
+1. Make name of generated RustFramework.xcframework unique. Also make sure `.binaryTarget(name: "..."` is unique.
+2. Inside the RustFramework.xcframework make sure generated `libmylib.a` is unqiue.
+3. Inside the RustFramework.xcframework make generate a unique named folder in `Headers` folder. And use same name that you will use for enclosed `.h` file. So for example I made `Headers/libFFI1` and then put both `libFFI1.h` and `module.modulemap` inside that folder.
+4. Inside the RustFramework.xcframework make sure `Info.plist` is updated to point to the uniquely name `.a` file. I did not seem to need to update the `Headers` value in the plist.
+5. Also will need to make sure that the module name in `module.modulemap` is unique, I used same convention that I used for `.h` file. The `module.modulemap` on the other hand does not need to be unique.
+6. Make sure to update `lib.swift` to import the updated module name.
+
+I think that's it.
+
+Generally I think it makes sense to incorporate the package name into all of these values. Or mabye if you want things shorter add a param for a unque ID.
