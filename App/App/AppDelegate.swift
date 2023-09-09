@@ -1,5 +1,4 @@
 import Cocoa
-import Package1
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
