@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43BC14142AACB10100184EFD /* Package2 in Frameworks */ = {isa = PBXBuildFile; productRef = 43BC14132AACB10100184EFD /* Package2 */; };
+		43BC14162AACB13F00184EFD /* Package1 in Frameworks */ = {isa = PBXBuildFile; productRef = 43BC14152AACB13F00184EFD /* Package1 */; };
 		43F2B7DA2AACA3A700137286 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F2B7D92AACA3A700137286 /* AppDelegate.swift */; };
 		43F2B7DC2AACA3A700137286 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F2B7DB2AACA3A700137286 /* ViewController.swift */; };
 		43F2B7DE2AACA3A800137286 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43F2B7DD2AACA3A800137286 /* Assets.xcassets */; };
@@ -27,6 +29,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43BC14142AACB10100184EFD /* Package2 in Frameworks */,
+				43BC14162AACB13F00184EFD /* Package1 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +90,8 @@
 			);
 			name = App;
 			packageProductDependencies = (
+				43BC14132AACB10100184EFD /* Package2 */,
+				43BC14152AACB13F00184EFD /* Package1 */,
 			);
 			productName = App;
 			productReference = 43F2B7D62AACA3A700137286 /* App.app */;
@@ -349,6 +355,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		43BC14132AACB10100184EFD /* Package2 */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Package2;
+		};
+		43BC14152AACB13F00184EFD /* Package1 */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Package1;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 43F2B7CE2AACA3A700137286 /* Project object */;
 }
